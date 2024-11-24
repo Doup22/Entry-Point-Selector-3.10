@@ -3,15 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const child_process_1 = require("child_process");
 const fs_1 = require("fs");
 const path_1 = require("path");
-
 function toJSON(str) {
     try {
         return JSON.parse(str);
-    } catch {
+    }
+    catch {
         return str;
     }
 }
-
 const dir = (0, path_1.resolve)(__dirname, '..');
 const configFilepath = (0, path_1.resolve)(dir, 'config', 'config.json');
 if (!(0, fs_1.existsSync)(configFilepath)) {
@@ -25,14 +24,14 @@ if (!(0, fs_1.existsSync)(configFilepath)) {
         maps: {},
         onlyOnce: false,
     }, null, 2));
-} else {
+}
+else {
     const config = JSON.parse((0, fs_1.readFileSync)(configFilepath, 'utf8'));
     if (config.maps?.length === 0) {
         config.maps = {};
         (0, fs_1.writeFileSync)(configFilepath, JSON.stringify(config, null, 2));
     }
 }
-
 const logFilepath = (0, path_1.resolve)(dir, 'log.log');
 let newFile = true;
 function log(logger, url, info, output) {
@@ -41,12 +40,13 @@ function log(logger, url, info, output) {
         newFile = false;
     }
     logger.info('info: ' + JSON.stringify(toJSON(info), null, 2));
+    // logger.info('data: ' + JSON.stringify(toJSON(output), null, 2));
     let file = (0, fs_1.readFileSync)(logFilepath, 'utf8');
     file += '\n>>>>>> url: ' + url;
     file += '\ninfo: ' + JSON.stringify(toJSON(info), null, 2);
+    // file += '\ndata: ' + JSON.stringify(toJSON(output), null, 2);
     (0, fs_1.writeFileSync)(logFilepath, file);
 }
-
 class EntryPointSelector {
     preSptLoad(container) {
         const logger = container.resolve('WinstonLogger');
@@ -56,7 +56,6 @@ class EntryPointSelector {
         const locationController = container.resolve('LocationController');
         const inraidCallbacks = container.resolve('InraidCallbacks');
         const httpResponse = container.resolve('HttpResponseUtil');
-
         const setSpawnPointParams = {
             url: '/client/locations',
             action: (_url, _info, _sessionID, output) => {
@@ -82,7 +81,6 @@ class EntryPointSelector {
                 return httpResponse.getBody(returnResult);
             }
         };
-
         const openEPSOnRaid = {
             url: '/singleplayer/settings/raid/menu',
             action: (_url, _info, _sessionID, output) => {
@@ -95,7 +93,6 @@ class EntryPointSelector {
                 return inraidCallbacks.getRaidMenuSettings();
             }
         };
-
         const openEPSOnLocation = {
             url: '/eps/location',
             action: (_url, info, _sessionID, output) => {
@@ -111,7 +108,6 @@ class EntryPointSelector {
                 return '';
             }
         };
-
         const main = {
             url: '/client/location/getLocalloot',
             action: (url, info, sessionID, output) => {
@@ -138,60 +134,22 @@ class EntryPointSelector {
                         ...location,
                         SpawnPointParams,
                     });
-                } catch (err) {
+                }
+                catch (err) {
                     return httpResponse.getBody(location);
                 }
             }
         };
-
         staticRouterModService.registerStaticRouter('StaticRoutePeekingAki', [
+            // setSpawnPointParams,
             openEPSOnRaid,
             openEPSOnLocation,
         ], 'aki');
-
         dynamicRouterModService.registerDynamicRouter('DynamicRoutePeekingAki', [
             main,
         ], 'aki');
     }
-
-    postDBLoad(container) {
-        const databaseServer = container.resolve('DatabaseServer');
-        const tables = databaseServer.getTables();
-
-        const randomLocationsPath = (0, path_1.resolve)(dir, 'data', 'randomLocations.json');
-        if ((0, fs_1.existsSync)(randomLocationsPath)) {
-            const randomLocations = JSON.parse((0, fs_1.readFileSync)(randomLocationsPath, 'utf8'));
-
-            // Inject custom spawns into the location tables based on randomLocations.json
-            for (const mapName in randomLocations) {
-                if (tables.locations[mapName]) {
-                    const mapSpawns = randomLocations[mapName];
-                    mapSpawns.forEach(spawn => {
-                        // Each spawn has 'locations', so we loop through them
-                        spawn.locations.forEach(location => {
-                            const customSpawn = {
-                                Id: location.id,
-                                Position: location.position,
-                                Categories: ["Player"],  // Assuming it's player spawn
-                                Sides: ["All"],  // Customize as needed
-                                Infiltration: "",  // Override default infiltration rules
-                                DelayToCanSpawnSec: 0,  // No delay for spawns
-                                SpawnChance: 100,  // Force spawn chance to 100%
-                                MinDistanceToPlayers: 0,  // Remove player proximity restrictions
-                                MinDistanceToEnemies: 0,  // Remove enemy proximity restrictions
-                                MaxSimultaneousSpawns: 1,  // Allow unlimited simultaneous spawns
-                                TimeOfDayRestrictions: false  // Ignore any time-of-day restrictions
-                            };
-
-                            // Push the custom spawn to the spawn table, bypassing restrictions
-                            tables.locations[mapName].base.SpawnPointParams.push(customSpawn);
-                        });
-                    });
-                }
-            }
-        }
-    }
 }
-
 module.exports = { mod: new EntryPointSelector() };
+
 
