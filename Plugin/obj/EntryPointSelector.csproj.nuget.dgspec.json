@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Dustin\\Desktop\\Entry Point Selector\\SPT-EntryPointSelector\\Plugin\\EntryPointSelector.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Dustin\\Desktop\\Entry Point Selector\\SPT-EntryPointSelector\\Plugin\\EntryPointSelector.csproj": {
+      "version": "2.0.3",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Dustin\\Desktop\\Entry Point Selector\\SPT-EntryPointSelector\\Plugin\\EntryPointSelector.csproj",
+        "projectName": "EntryPointSelector",
+        "projectPath": "C:\\Users\\Dustin\\Desktop\\Entry Point Selector\\SPT-EntryPointSelector\\Plugin\\EntryPointSelector.csproj",
+        "packagesPath": "C:\\Users\\Dustin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dustin\\Desktop\\Entry Point Selector\\SPT-EntryPointSelector\\Plugin\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dustin\\Desktop\\Entry Point Selector\\SPT-EntryPointSelector\\Plugin\\NuGet.Config",
+          "C:\\Users\\Dustin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.bepinex.dev/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "targetAlias": "net471",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "targetAlias": "net471",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

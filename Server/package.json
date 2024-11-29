@@ -1,0 +1,42 @@
+{
+  "name": "Entry Point Selector",
+  "version": "2.0.0",
+  "main": "src/mod.js",
+  "license": "MIT",
+  "author": "usama8800 and updated by Doup22",
+  "sptVersion": "~3.10",
+  "scripts": {
+    "sppm": "nodemon -w scripts/spawnPointParamsMap.ts --exec npx ts-node scripts/spawnPointParamsMap.ts",
+    "zip": "npx ts-node scripts/zip.ts archive",
+    "postzip": "npx ts-node scripts/zip.ts deploy",
+    "start": "nodemon -w scripts/start.ts --exec npx ts-node scripts/start.ts",
+    "build": "tsc",
+    "bepin": "nodemon -w BepInEx -e * --ignore BepInEx/bin --ignore BepInEx/obj --ignore BepInEx/deps --exec npx ts-node scripts/bepin.ts"
+  },
+  "devDependencies": {
+    "@types/archiver": "^5.3.2",
+    "@types/async": "^3.2.18",
+    "@types/decompress": "^4.2.4",
+    "@types/electron": "^1.4.38",
+    "@types/fs-extra": "^11.0.1",
+    "@types/i18n": "^0.13.5",
+    "@types/node": "^14.15.3",
+    "@types/winston": "^2.4.4",
+    "@types/ws": "^8.5.3",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "archiver": "^5.3.1",
+    "async": "^3.2.4",
+    "decompress": "^4.2.1",
+    "eslint": "7.26.0",
+    "fs-extra": "^11.1.1",
+    "i18n": "^0.15.1",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tsyringe": "4.6.0",
+    "typescript": "4.6.4",
+    "winston": "^3.7.2",
+    "ws": "^8.11.0"
+  }
+}

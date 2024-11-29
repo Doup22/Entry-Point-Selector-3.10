@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/nodemon",
+  "watch": [
+    "src",
+    "electron/src/**/*",
+    "BepInEx/*",
+    "scripts"
+  ],
+  "ext": "js,ts,html,css,cs,csproj",
+  "exec": "npm run zip"
+}

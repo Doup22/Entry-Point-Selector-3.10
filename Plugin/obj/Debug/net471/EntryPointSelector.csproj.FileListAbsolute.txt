@@ -1,0 +1,6 @@
+C:\Users\Dustin\Desktop\Entry Point Selector\SPT-EntryPointSelector\Plugin\obj\Debug\net471\EntryPointSelector.csproj.AssemblyReference.cache
+C:\Users\Dustin\Desktop\Entry Point Selector\SPT-EntryPointSelector\Plugin\obj\Debug\net471\EntryPointSelector.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dustin\Desktop\Entry Point Selector\SPT-EntryPointSelector\Plugin\obj\Debug\net471\EntryPointSelector.AssemblyInfoInputs.cache
+C:\Users\Dustin\Desktop\Entry Point Selector\SPT-EntryPointSelector\Plugin\obj\Debug\net471\EntryPointSelector.AssemblyInfo.cs
+C:\Users\Dustin\Desktop\Entry Point Selector\SPT-EntryPointSelector\Plugin\obj\Debug\net471\EntryPointSelector.csproj.CoreCompileInputs.cache
+C:\Users\Dustin\Desktop\Entry Point Selector\SPT-EntryPointSelector\Plugin\obj\Debug\net471\EntryPointSelector.sourcelink.json

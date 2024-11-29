@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <script defer src="public/fix.js"></script>
+  <script defer src="public/index.js"></script>
+  <link rel="stylesheet" href="public/index.css">
+  <title>Entry Point</title>
+</head>
+
+<body>
+  <div id="hidden-images">
+    <img src="public/images/bigmap.png" />
+    <img src="public/images/factory4_day.png" />
+    <img src="public/images/Interchange.png" />
+    <img src="public/images/laboratory.png" />
+    <img src="public/images/Lighthouse.png" />
+    <img src="public/images/RezervBase.png" />
+    <img src="public/images/Shoreline.png" />
+    <img src="public/images/TarkovStreets.png" />
+    <img src="public/images/Woods.png" />
+  </div>
+  <div class="form">
+    <select id="map-select">
+      <option default value="bigmap">Customs</option>
+      <option value="factory4_day">Factory</option>
+      <option value="Interchange">Interchange</option>
+      <option value="laboratory">Laboratory</option>
+      <option value="Lighthouse">Lighthouse</option>
+      <option value="Shoreline">Shoreline</option>
+      <option value="RezervBase">Reserve</option>
+      <option value="TarkovStreets">Tarkov Streets</option>
+      <option value="Woods">Woods</option>
+    </select>
+
+    <input type="checkbox" class="margin-left" id="auto-open" name="auto-open">
+    <label for="auto-open">Auto Open</label>
+
+    <input type="checkbox" class="margin-left" id="only-once" name="only-once">
+    <label for="only-once">Only Once</label>
+
+    <input type="checkbox" class="margin-left" id="disabled" name="disabled">
+    <label for="disabled">Disabled</label>
+
+    <input type="checkbox" class="margin-left" id="dark-theme" name="dark-theme">
+    <label for="dark-theme">Dark Theme</label>
+
+    <div class="spacer"></div>
+
+    <span id="status"></span>
+  </div>
+  <div class="map" id="map">
+    <canvas id="canvas" height="100" width="100"></canvas>
+  </div>
+</body>
+
+</html>

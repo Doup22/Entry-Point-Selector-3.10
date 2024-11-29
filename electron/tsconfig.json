@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    // "allowJs": true,
+    "module": "NodeNext",
+    "target": "es2020",
+   "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": false,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictPropertyInitialization": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "outDir": "dist/",
+  },
+  "lib": [
+    "es2020"
+  ],
+  "include": [
+    "src/*",
+    "src/**/*",
+  ],
+  "exclude": [
+    "tmp/**/*",
+    "dist/**/*"
+  ]
+}
