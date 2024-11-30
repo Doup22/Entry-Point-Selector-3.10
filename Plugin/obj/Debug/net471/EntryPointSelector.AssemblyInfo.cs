@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Entry Point Selector")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.3.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.3+e17afe7223a9448917df20195a6546d95d4f66f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.3+4a4b86f2843b5fb53a65d5f2918918cd97c3fc61")]
 [assembly: System.Reflection.AssemblyProductAttribute("EntryPointSelector")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EntryPointSelector")]
 [assembly: System.Reflection.AssemblyVersionAttribute("2.0.3.0")]

@@ -1,5 +1,6 @@
 is_global = true
 build_property.RootNamespace = EntryPointSelector
-build_property.ProjectDir = C:\Users\Dustin\Desktop\Entry Point Selector\SPT-EntryPointSelector\Plugin\
+build_property.ProjectDir = C:\Users\Dustin\Desktop\Entry Point Selector\Entry-Point-Selector-3.10\Plugin\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 
